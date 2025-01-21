@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #002f2a;
+    background-color: #000000;
 }
 
 .contenedor{
@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #002f2a;
+    background: #ffffff;
     box-shadow: 0 0 19px #98989a, 0 0 19px #98989a, 0 0 33px #98989a;
 }
 
@@ -23,7 +23,7 @@ body {
     position: absolute;
     width: 99%;
     height: 99%;
-    background-color: #002f2a;
+    background-color: #611232;
     display: flex;
     display: none;
 }
@@ -37,14 +37,14 @@ body {
     left:50%;
     transform: translateX(-50%);
     top:3%;
-    color: #98989a;
+    color: #ffffff;
 }
 .div_avatar{
     position: absolute;
     width: 99%;
     height: 70%;
     top:13%;
-    background-color: #ffffff39;
+    background-color: #002f2a;
     display: flex;
 }
 /* -------------------------------- BOTON -------------------------------- */
@@ -64,8 +64,8 @@ body {
     height: 100%;
     font-weight: bold;
     border-radius: 10%;
-    color: #98989a;
-    background-color: #002f2a;
+    color: #ffffff;
+    background-color: #a57f1c;
     font-size: calc(1vw + 1vh);
     font-weight: bold;
 }

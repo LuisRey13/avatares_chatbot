@@ -1,0 +1,19 @@
+#div_avatar_2{
+    position: relative;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    z-index: 100;
+}
+#avatar_2{
+    position: relative;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    float: left;
+    width: 80%;
+    height: 80%;
+    z-index: 110;
+}

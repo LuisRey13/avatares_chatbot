@@ -1,8 +1,8 @@
-let NumPag=3
+let NumPag=4
 // ------------------------ Inicialización Botones (cada pagina tiene su boton)
-let botonA0="";let botonA1="";let botonA2="";
-let botonS0=""; let botonS1=""; let botonS2="";
-let titulo0=""; let titulo1=""; let titulo2=""; 
+let botonA0="";let botonA1="";let botonA2=""; let botonA3="";
+let botonS0=""; let botonS1=""; let botonS2="";  let botonS3=""; 
+let titulo0=""; let titulo1=""; let titulo2="";  let titulo3=""; 
 for(let b =0;b<NumPag;b++){
     eval("botonA"+String(b)+" = document.getElementById('botonA"+String(b)+"');");
     eval("botonS"+String(b)+" = document.getElementById('botonS"+String(b)+"');");
@@ -23,8 +23,8 @@ function initContenedor(){
     rectcontenedor = contenedor.getBoundingClientRect();
     contenedorW=rectcontenedor.width*.9; contenedorH=rectcontenedor.height*.9;
     // ----------------------- Posicion de boton y posición en Z
-    let posBS=[50,70,50]; let indxBS=[11,11,10];
-    let posBA=[50,30,50]; let indxBA=[10,10,11];
+    let posBS=[50,70,70,50]; let indxBS=[11,11,11,10];
+    let posBA=[50,30,30,50]; let indxBA=[10,10,10,11];
     // ------------------------ Inicialización de Posicion de Botones  
     for(let b=0;b<NumPag;b++){        
         eval("botonA"+String(b)+'.style.left = "'+String(posBA[b])+'%";')
@@ -58,28 +58,28 @@ function nextPage(pageId) {
     let ht=0; let hs=0; let cb=0;
     const movimiento = () => {
         if(pageId=="pagina0"){
-            // ------------------------------------------- Movimiento botones
+            // ------------------------------------------- Movimiento botones primer pagina
             botonA1.style.left = String(30+cb/103*20)+"%"; 
             botonS1.style.left = String(70-cb/103*20)+"%";
             botonA1.style.zIndex=10
             botonS1.style.zIndex=11
         }
         if(pageId=="pagina1"){
-            // ------------------------------------------- Movimiento botones
+            // ------------------------------------------- Movimiento botones segunda pagina
             botonA0.style.left = String(50-cb/103*20)+"%";
             botonS0.style.left = String(50+cb/103*20)+"%";
-
-            botonA2.style.left = String(50-cb/103*20)+"%";
-            botonS2.style.left = String(50+cb/103*20)+"%";
-
-            
         }
         if(pageId=="pagina2"){
-            // ------------------------------------------- Movimiento botones
-            botonA1.style.left = String(30+cb/103*20)+"%"; 
-            botonS1.style.left = String(70-cb/103*20)+"%";
-            botonA1.style.zIndex=11
-            botonS1.style.zIndex=10
+            // ------------------------------------------- Movimiento botones penultima pagina
+            botonA3.style.left = String(50-cb/103*20)+"%";
+            botonS3.style.left = String(50+cb/103*20)+"%";
+        }
+        if(pageId=="pagina3"){
+            // ------------------------------------------- Movimiento botones ultima pagina
+            botonA2.style.left = String(30+cb/103*20)+"%"; 
+            botonS2.style.left = String(70-cb/103*20)+"%";
+            botonA2.style.zIndex=11
+            botonS2.style.zIndex=10
         }
         for(let b=0;b<3;b++){eval("titulo"+String(b)+".style.opacity = "+String(1-cb/100))}
 
@@ -104,6 +104,70 @@ window.onload = function() {
     initContenedor();
     document.getElementById("pagina0").classList.add("active");
 }
+
+// <<<<<<<<<<<<<<<<<<<
+// ------------------- Funcion ciclica de muchos eventos c/10ms
+// <<<<<<<<<<<<<<<<<<<
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Movimiento PARPADEO
+let parpadosD_0 = document.getElementById('div_ParD_0');
+let parpadosI_0 = document.getElementById('div_ParI_0');
+let parpadosD_1 = document.getElementById('div_ParD_1');
+let parpadosI_1 = document.getElementById('div_ParI_1');
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Modifica brillitos
+let posBlltsXI=[26.5,29.5,42.0, 38.6, 38.1, 37.9]
+let posBlltsXD=[26.5,29.5,43.0, 39.9, 39.3, 39.3];
+let posBlltsY= [11.5,13.5,15, 18, 23, 27.5];
+let brillitsI = document.getElementById('div_brlltsI');
+let back_brillitsI = document.getElementById('div_soprtBrlltsI');
+let brillitsD = document.getElementById('div_brlltsD');
+let back_brillitsD = document.getElementById('div_soprtBrlltsD');
+function animacion(cb,cbG,GrdP,dirP){
+    // <<<<<<<<<<<<<<<<<<< Modifica brillitos
+    let gradientEscala = 1;
+    let dirPB = 1;
+    let intervalos = setInterval(() => {
+    gradientEscala += dirPB * 10;
+
+    brillitsI.style.width =String(gradientEscala)+"%";
+    brillitsI.style.height =String(gradientEscala)+"%";
+    back_brillitsI.style.left = String(posBlltsXI[cb])+"%";
+    back_brillitsI.style.bottom = String(posBlltsY[cb])+"%";
+
+    brillitsD.style.width =String(gradientEscala)+"%";
+    brillitsD.style.height =String(gradientEscala)+"%";
+    back_brillitsD.style.right = String(posBlltsXD[cb])+"%";
+    back_brillitsD.style.bottom = String(posBlltsY[cb])+"%";
+
+    if (gradientEscala > 100) {dirPB = -1;
+    }else if (gradientEscala < 1) {
+        dirPB = 1;
+        clearInterval(intervalos); // Detén el intervalo
+        cb+=1;cbG+=1;
+        if(cb>5){cb=0}
+        setTimeout(animacion,100,cb,cbG,GrdP,dirP); // Espera .1 segundos antes de repetir
+    }
+    // <<<<<<<<<<<<<<<<<<< Modifica PARPADEO
+    if(cbG>10){
+        GrdP += dirP * 9; // Incrementa la posición del gradiente
+        parpadosD_0.style.background = `linear-gradient(180deg, #611232 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
+        parpadosI_0.style.background = `linear-gradient(180deg, #611232 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
+        parpadosD_1.style.background = `linear-gradient(180deg, #000000 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
+        parpadosI_1.style.background = `linear-gradient(180deg, #000000 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
+        if (GrdP >= 99) {dirP = -1;
+        }else if (GrdP < 0) {
+            dirP = 1;
+            GrdP=0;
+            cbG=0;
+        }
+    }
+}, 19); // Actualiza el gradiente cada 9 milisegundos
+}
+animacion(0,0,0,1) // el primero inicializa animacion
+// <<<<<<<<<<<<<<<<<<<
+// -------------------
+// <<<<<<<<<<<<<<<<<<<
+
 
 /* -------------------- Funciones para dinámicas -------------------- */
 window.addEventListener("load", initContenedor);

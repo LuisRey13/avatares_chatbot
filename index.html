@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chatbot</title>
     <link rel="stylesheet" href="estilo.css">
-    <link rel="stylesheet" href="estilo_avatar_LR.css">
+    <link rel="stylesheet" href="estilo_avatar_0.css">
+    <link rel="stylesheet" href="estilo_avatar_1.css">
+    <link rel="stylesheet" href="estilo_avatar_2.css">
 </head>
 <body>
     <div class="contenedor" id="contenedor">
         <div class="pagina" id="pagina0">
             <h1 class="titulo" id="titulo0">AVATAR 0</h1>
             <div class="div_avatar" id="div_avatar0">
-                <div id="div_avatar_LR"><img src="./corel/avatar_LR.png" id="avatar_LR"></div>
+                <div id="div_avatar_0"><img src="./corel/avatar_0.png" id="avatar_0"></div>
             </div>
             <div class="page-nav" id="page-nav0">
                 <button class="boton" id="botonA0">Anterior</button>
@@ -22,8 +24,8 @@
 
         <div class="pagina" id="pagina1">
             <h1 class="titulo" id="titulo1">AVATAR 1</h1>
-            <div class="div_avatar">
-    
+            <div class="div_avatar" id="div_avatar1">
+                <div id="div_avatar_1"><img src="./corel/avatar_1.png" id="avatar_1"></div>
             </div>
             <div class="page-nav" id="page-nav1">
                 <button class="boton" id="botonA1" onclick="nextPage('pagina0')">Anterior</button>
@@ -34,14 +36,28 @@
         <div class="pagina" id="pagina2">
             <h1 class="titulo" id="titulo2">AVATAR 2</h1>
             <div class="div_avatar">
-    
+                <div id="div_avatar_2"><img src="./corel/avatar_2.png" id="avatar_2"></div>
             </div>
             <div class="page-nav" id="page-nav2">
                 <button class="boton" id="botonA2" onclick="nextPage('pagina1')">Anterior</button>
-                <button class="boton" id="botonS2">Siguiente</button>
+                <button class="boton" id="botonS2" onclick="nextPage('pagina3')">Siguiente</button>
+            </div>
         </div>
+
+        <div class="pagina" id="pagina3">
+            <h1 class="titulo" id="titulo3">AVATAR 3</h1>
+            <div class="div_avatar">
+    
+            </div>
+            <div class="page-nav" id="page-nav3">
+                <button class="boton" id="botonA3" onclick="nextPage('pagina2')">Anterior</button>
+                <button class="boton" id="botonS3">Siguiente</button>
+            </div>
+        </div>
+
     </div>
+    <script src="script_avatar_0.js"></script>
+    <script src="script_avatar_1.js"></script>
     <script src="script_cambio_paginas.js"></script>
-    <script src="script_avatar_LR.js"></script>
 </body>
 </html>
