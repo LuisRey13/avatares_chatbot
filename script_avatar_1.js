@@ -22,6 +22,22 @@ div_ParD_1.setAttribute("class","div_Parpds_1");
 let div_ParI_1= document.createElement("div");
 div_ParI_1.setAttribute("id","div_ParI_1");
 div_ParI_1.setAttribute("class","div_Parpds_1");
+/* ------------ SE INCRUSTA sporte brillitos Izquierdos ------------- */
+let div_soprtBrlltsI_1 = document.createElement("div");
+div_soprtBrlltsI_1.setAttribute("id","div_soprtBrlltsI_1");
+div_soprtBrlltsI_1.setAttribute("class","div_soprtBrllts_1");
+/* ---------------- SE INCRUSTA brillitos Izquierdos ---------------- */
+let div_brlltsI_1 = document.createElement("div");
+div_brlltsI_1.setAttribute("id","div_brlltsI_1");
+div_brlltsI_1.setAttribute("class","div_brllts_1");
+/* ------------- SE INCRUSTA sporte brillitos Derechos -------------- */
+let div_soprtBrlltsD_1 = document.createElement("div");
+div_soprtBrlltsD_1.setAttribute("id","div_soprtBrlltsD_1");
+div_soprtBrlltsD_1.setAttribute("class","div_soprtBrllts_1");
+/* ----------------- SE INCRUSTA brillitos Derechos ----------------- */
+let div_brlltsD_1 = document.createElement("div");
+div_brlltsD_1.setAttribute("id","div_brlltsD_1");
+div_brlltsD_1.setAttribute("class","div_brllts_1");
 /* --------------------- SE UNEN LOS ELEMENTOS ---------------------- */
 div_avatar_1.appendChild(div_GOjoD_1);
 div_avatar_1.appendChild(div_GOjoI_1);
@@ -29,7 +45,10 @@ div_GOjoD_1.appendChild(div_OjoD_1);
 div_GOjoI_1.appendChild(div_OjoI_1);
 div_GOjoD_1.appendChild(div_ParD_1);
 div_GOjoI_1.appendChild(div_ParI_1);
-
+div_avatar_1.appendChild(div_soprtBrlltsI_1);
+div_avatar_1.appendChild(div_soprtBrlltsD_1);
+div_soprtBrlltsI_1.appendChild(div_brlltsI_1);
+div_soprtBrlltsD_1.appendChild(div_brlltsD_1);
 
 /// <<<<<<<<<<<<<<<<<<<<< INICIA MOVIMIENTO <<<<<<<<<<<<<<<<<<<<<<<<<
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
