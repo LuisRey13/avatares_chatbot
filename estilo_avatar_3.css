@@ -1,4 +1,4 @@
-#div_avatar_0{
+#div_avatar_3{
     position: relative;
     left: 50%;
     top:50%;
@@ -7,7 +7,7 @@
     aspect-ratio: 1 / 1;
     z-index: 100;
 }
-#avatar_0{
+#avatar_3{
     position: relative;
     left: 50%;
     top:50%;
@@ -15,27 +15,27 @@
     float: left;
     width: 80%;
     height: 80%;
-    z-index: 3;
+    z-index: 110;
 }
 /* ------------------------------ Globo Ojos ----------------------------- */
-.div_GOjos_0{
+.div_GOjos_3{
     position: absolute;
-    bottom: 54.7%;
-    width: 11.6%;
-    height: 11.6%;
+    bottom: 51.9%;
+    width: 7%;
+    height: 7%;
     background-color: #ffffff;
     border-radius: 50%;
     z-index: 100;
 }
-#div_GOjoD_0{left:33.0%;}
-#div_GOjoI_0{right:34.6%;}
+#div_GOjoD_3{left:37.3%;}
+#div_GOjoI_3{right:37.3%;}
 /* --------------------------------- Ojos -------------------------------- */
-.div_Ojos_0{
+.div_Ojos_3{
     position: absolute;
     left: 30%;
     bottom: 30%;
-    width: 39%;
-    height: 39%;
+    width: 60%;
+    height: 60%;
     background-color: #611232;
     border-radius: 50%;
     /*box-shadow: 0 0 6px rgb(0, 153, 255), 0 0 6px rgb(0, 153, 255), 0 0 6px rgb(0, 153, 255);*/
@@ -43,7 +43,7 @@
     z-index: 100;
 }
 /* ------------------------------- Parpado ------------------------------- */
-.div_Parpds_0{
+.div_Parpds_3{
     position: absolute;
     left: auto;
     bottom: auto;
@@ -52,34 +52,8 @@
     border-radius: 50%;
     z-index: 100;
 }
-/* --------------------------------- Boca -------------------------------- */
-.div_boca{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 6%;
-    height: 3%;
-    background-color: #000000;
-    border-radius: 30% 30% 50% 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-}
-/* -------------------------------- Lengua ------------------------------ */
-.div_lengua{
-    position: absolute;
-    bottom: 0px;
-    left: auto;
-    width: 3px;
-    height: 3px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 30% 30% 50% 50%;
-    z-index: 100;
-}
 /* ----------------------------- Brillitos ------------------------------ */
-.div_soprtBrllts_0{
+.div_soprtBrllts_3{
     position: absolute;
     width: 13%;
     height: 13%;
@@ -88,9 +62,9 @@
     align-items: center;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0);
-    z-index: 100;
+    z-index: 110;
 }
-.div_brllts_0{
+.div_brllts_3{
     position: absolute;
     border-radius: 50%;
     background: radial-gradient(circle at 50% 50%, 
@@ -98,5 +72,5 @@
     rgba(255, 255, 255, 0) 10%,
     #e6d194 0%,
     rgba(255, 255, 255, 0) 50%);
-    z-index: 100;
+    z-index: 110;
 }

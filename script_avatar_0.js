@@ -31,21 +31,21 @@ let div_lengua= document.createElement("div");
 div_lengua.setAttribute("id","div_lengua");
 div_lengua.setAttribute("class","div_lengua");
 /* ------------ SE INCRUSTA sporte brillitos Izquierdos ------------- */
-let div_soprtBrlltsI= document.createElement("div");
-div_soprtBrlltsI.setAttribute("id","div_soprtBrlltsI");
-div_soprtBrlltsI.setAttribute("class","div_soprtBrllts");
+let div_soprtBrlltsI_0 = document.createElement("div");
+div_soprtBrlltsI_0.setAttribute("id","div_soprtBrlltsI_0");
+div_soprtBrlltsI_0.setAttribute("class","div_soprtBrllts_0");
 /* ---------------- SE INCRUSTA brillitos Izquierdos ---------------- */
-let div_brlltsI= document.createElement("div");
-div_brlltsI.setAttribute("id","div_brlltsI");
-div_brlltsI.setAttribute("class","div_brllts");
+let div_brlltsI_0 = document.createElement("div");
+div_brlltsI_0.setAttribute("id","div_brlltsI_0");
+div_brlltsI_0.setAttribute("class","div_brllts_0");
 /* ------------- SE INCRUSTA sporte brillitos Derechos -------------- */
-let div_soprtBrlltsD= document.createElement("div");
-div_soprtBrlltsD.setAttribute("id","div_soprtBrlltsD");
-div_soprtBrlltsD.setAttribute("class","div_soprtBrllts");
+let div_soprtBrlltsD_0 = document.createElement("div");
+div_soprtBrlltsD_0.setAttribute("id","div_soprtBrlltsD_0");
+div_soprtBrlltsD_0.setAttribute("class","div_soprtBrllts_0");
 /* ----------------- SE INCRUSTA brillitos Derechos ----------------- */
-let div_brlltsD= document.createElement("div");
-div_brlltsD.setAttribute("id","div_brlltsD");
-div_brlltsD.setAttribute("class","div_brllts");
+let div_brlltsD_0 = document.createElement("div");
+div_brlltsD_0.setAttribute("id","div_brlltsD_0");
+div_brlltsD_0.setAttribute("class","div_brllts_0");
 /* --------------------- SE UNEN LOS ELEMENTOS ---------------------- */
 div_avatar_0.appendChild(div_GOjoD_0);
 div_avatar_0.appendChild(div_GOjoI_0);
@@ -55,10 +55,10 @@ div_GOjoD_0.appendChild(div_ParD_0);
 div_GOjoI_0.appendChild(div_ParI_0);
 div_boca.appendChild(div_lengua);
 div_avatar_0.appendChild(div_boca);
-div_avatar_0.appendChild(div_soprtBrlltsI);
-div_avatar_0.appendChild(div_soprtBrlltsD);
-div_soprtBrlltsI.appendChild(div_brlltsI);
-div_soprtBrlltsD.appendChild(div_brlltsD);
+div_avatar_0.appendChild(div_soprtBrlltsI_0);
+div_avatar_0.appendChild(div_soprtBrlltsD_0);
+div_soprtBrlltsI_0.appendChild(div_brlltsI_0);
+div_soprtBrlltsD_0.appendChild(div_brlltsD_0);
 
 /// <<<<<<<<<<<<<<<<<<<<< INICIA MOVIMIENTO <<<<<<<<<<<<<<<<<<<<<<<<<
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

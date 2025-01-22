@@ -114,14 +114,16 @@ let parpadosD_0 = document.getElementById('div_ParD_0');
 let parpadosI_0 = document.getElementById('div_ParI_0');
 let parpadosD_1 = document.getElementById('div_ParD_1');
 let parpadosI_1 = document.getElementById('div_ParI_1');
+let parpadosD_3 = document.getElementById('div_ParD_3');
+let parpadosI_3 = document.getElementById('div_ParI_3');
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Modifica brillitos
 let posBlltsXI=[26.5,29.5,42.0, 38.6, 38.1, 37.9]
 let posBlltsXD=[26.5,29.5,43.0, 39.9, 39.3, 39.3];
 let posBlltsY= [11.5,13.5,15, 18, 23, 27.5];
-let brillitsI = document.getElementById('div_brlltsI');
-let back_brillitsI = document.getElementById('div_soprtBrlltsI');
-let brillitsD = document.getElementById('div_brlltsD');
-let back_brillitsD = document.getElementById('div_soprtBrlltsD');
+let brillitsI_0 = document.getElementById('div_brlltsI_0'); let brillitsI_3 = document.getElementById('div_brlltsI_3');
+let back_brillitsI_0 = document.getElementById('div_soprtBrlltsI_0'); let back_brillitsI_3 = document.getElementById('div_soprtBrlltsI_3');
+let brillitsD_0 = document.getElementById('div_brlltsD_0'); let brillitsD_3 = document.getElementById('div_brlltsD_3');
+let back_brillitsD_0 = document.getElementById('div_soprtBrlltsD_0'); let back_brillitsD_3 = document.getElementById('div_soprtBrlltsD_3');
 function animacion(cb,cbG,GrdP,dirP){
     // <<<<<<<<<<<<<<<<<<< Modifica brillitos
     let gradientEscala = 1;
@@ -129,15 +131,15 @@ function animacion(cb,cbG,GrdP,dirP){
     let intervalos = setInterval(() => {
     gradientEscala += dirPB * 10;
 
-    brillitsI.style.width =String(gradientEscala)+"%";
-    brillitsI.style.height =String(gradientEscala)+"%";
-    back_brillitsI.style.left = String(posBlltsXI[cb])+"%";
-    back_brillitsI.style.bottom = String(posBlltsY[cb])+"%";
+    brillitsI_0.style.width =String(gradientEscala)+"%"; if(cb<5){brillitsI_3.style.width =String(gradientEscala)+"%";}
+    brillitsI_0.style.height =String(gradientEscala)+"%"; if(cb<5){brillitsI_3.style.height =String(gradientEscala)+"%";}
+    back_brillitsI_0.style.left = String(posBlltsXI[cb])+"%"; if(cb<5){back_brillitsI_3.style.left = String(posBlltsXI[cb])+"%";}
+    back_brillitsI_0.style.bottom = String(posBlltsY[cb])+"%"; if(cb<5){back_brillitsI_3.style.bottom = String(posBlltsY[cb])+"%";}
 
-    brillitsD.style.width =String(gradientEscala)+"%";
-    brillitsD.style.height =String(gradientEscala)+"%";
-    back_brillitsD.style.right = String(posBlltsXD[cb])+"%";
-    back_brillitsD.style.bottom = String(posBlltsY[cb])+"%";
+    brillitsD_0.style.width =String(gradientEscala)+"%"; if(cb<5){brillitsD_3.style.width =String(gradientEscala)+"%";}
+    brillitsD_0.style.height =String(gradientEscala)+"%"; if(cb<5){brillitsD_3.style.height =String(gradientEscala)+"%";}
+    back_brillitsD_0.style.right = String(posBlltsXD[cb])+"%"; if(cb<5){back_brillitsD_3.style.right = String(posBlltsXD[cb])+"%";}
+    back_brillitsD_0.style.bottom = String(posBlltsY[cb])+"%"; if(cb<5){back_brillitsD_3.style.bottom = String(posBlltsY[cb])+"%";}
 
     if (gradientEscala > 100) {dirPB = -1;
     }else if (gradientEscala < 1) {
@@ -154,6 +156,8 @@ function animacion(cb,cbG,GrdP,dirP){
         parpadosI_0.style.background = `linear-gradient(180deg, #611232 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
         parpadosD_1.style.background = `linear-gradient(180deg, #000000 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
         parpadosI_1.style.background = `linear-gradient(180deg, #000000 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
+        parpadosD_3.style.background = `linear-gradient(180deg, #000000 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
+        parpadosI_3.style.background = `linear-gradient(180deg, #000000 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
         if (GrdP >= 99) {dirP = -1;
         }else if (GrdP < 0) {
             dirP = 1;
