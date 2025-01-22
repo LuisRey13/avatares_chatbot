@@ -23,8 +23,8 @@ function initContenedor(){
     rectcontenedor = contenedor.getBoundingClientRect();
     contenedorW=rectcontenedor.width*.9; contenedorH=rectcontenedor.height*.9;
     // ----------------------- Posicion de boton y posición en Z
-    let posBS=[50,70,70,50]; let indxBS=[11,11,11,10];
-    let posBA=[50,30,30,50]; let indxBA=[10,10,10,11];
+    let posBS=[50,70,50]; let indxBS=[11,11,10]; // <<<<<<<<<<<<<<<<<<<<<<<<<<<<< Aqui tambien modificar numero de paginas y posicion horizontal
+    let posBA=[50,30,50]; let indxBA=[10,10,11]; // <<<<<<<<<<<<<<<<<<<<<<<<<<<<< Aqui tambien modificar numero de paginas y posicion horizontal
     // ------------------------ Inicialización de Posicion de Botones  
     for(let b=0;b<NumPag;b++){        
         eval("botonA"+String(b)+'.style.left = "'+String(posBA[b])+'%";')
