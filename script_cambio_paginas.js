@@ -166,9 +166,10 @@ function animacion(cb,cbG,GrdP,dirP,flt){
         parpadosI_0.style.background = `linear-gradient(180deg, #611232 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
         parpadosD_1.style.background = `linear-gradient(180deg, #000000 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
         parpadosI_1.style.background = `linear-gradient(180deg, #000000 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
-        parpadosD_3.style.height = String(100-GrdP)+"%";parpadosD_3.style.top = String(50-GrdP/2)+"%"
-        parpadosI_3.style.height = String(100-GrdP)+"%";parpadosI_3.style.top = String(50-GrdP/2)+"%"
-        parpadosD_3.style.transform = 'translateY(-50%)'; parpadosI_3.style.transform = 'translateY(-50%)';
+        parpadosD_3.style.height = String(100-GrdP)+"%";parpadosD_3.style.top = String(100-GrdP)+"%"
+        parpadosI_3.style.height = String(100-GrdP)+"%";parpadosI_3.style.top = String(100-GrdP)+"%"
+        parpadosD_3.style.transform = 'translateY(-'+String(100-GrdP)+'%)';
+        parpadosI_3.style.transform = 'translateY(-'+String(100-GrdP)+'%)';
     }
     // <<<<<<<<<<<<<<<<<<< Modifica flotacion
     if(flt<=2*Math.PI){flt+=Math.PI/100}

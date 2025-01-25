@@ -94,3 +94,35 @@
   }
   #ojoD{left: 0%;}  
   #ojoI{right: 0%;}
+
+  /* --------------------- sombra -------------------- */
+#sombra{
+  position: absolute;
+  left: 50%;
+  top: 93%;
+  transform: translateX(-50%);
+  width: 10%;
+  height: 3%;
+  z-index: 100;
+  border-radius: 50%;
+  background-color: black;
+  animation: sombra 6s linear infinite;
+}
+/* ----------------------- flotacion ---------------------- */
+@keyframes sombra {
+0% {
+  width: 10%;
+}
+25% {
+  width: 20%;
+}
+50% {
+  width: 26%;
+}
+75% {
+  width: 16%;
+}
+ 100% {
+  width: 10%;
+}
+}
