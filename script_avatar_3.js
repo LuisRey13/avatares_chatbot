@@ -1,94 +1,34 @@
-/* ----------------------- GLOBO OJO DERECHO ------------------------ */
-let div_GOjoD_3= document.createElement("div");
-div_GOjoD_3.setAttribute("id","div_GOjoD_3");
-div_GOjoD_3.setAttribute("class","div_GOjos_3");
-/* ----------------------- GLOBO OJO DERECHO ------------------------ */
-let div_GOjoI_3= document.createElement("div");
-div_GOjoI_3.setAttribute("id","div_GOjoI_3");
-div_GOjoI_3.setAttribute("class","div_GOjos_3");
-/* -------------------------- OJO DERECHO --------------------------- */
-let div_OjoD_3= document.createElement("div");
-div_OjoD_3.setAttribute("id","div_OjoD_3");
-div_OjoD_3.setAttribute("class","div_Ojos_3");
-/* ------------------------- OJO IZQUIERDO -------------------------- */
-let div_OjoI_3= document.createElement("div");
-div_OjoI_3.setAttribute("id","div_OjoI_3");
-div_OjoI_3.setAttribute("class","div_Ojos_3");
-/* ------------------------ PARPADO DERECHO ------------------------- */
-let div_ParD_3= document.createElement("div");
-div_ParD_3.setAttribute("id","div_ParD_3");
-div_ParD_3.setAttribute("class","div_Parpds_3");
-/* ----------------------- PARPADO IZQUIERDO ------------------------ */
-let div_ParI_3= document.createElement("div");
-div_ParI_3.setAttribute("id","div_ParI_3");
-div_ParI_3.setAttribute("class","div_Parpds_3");
-/* ------------ SE INCRUSTA sporte brillitos Izquierdos ------------- */
-let div_soprtBrlltsI_3 = document.createElement("div");
-div_soprtBrlltsI_3.setAttribute("id","div_soprtBrlltsI_3");
-div_soprtBrlltsI_3.setAttribute("class","div_soprtBrllts_3");
-/* ---------------- SE INCRUSTA brillitos Izquierdos ---------------- */
-let div_brlltsI_3 = document.createElement("div");
-div_brlltsI_3.setAttribute("id","div_brlltsI_3");
-div_brlltsI_3.setAttribute("class","div_brllts_3");
-/* ------------- SE INCRUSTA sporte brillitos Derechos -------------- */
-let div_soprtBrlltsD_3 = document.createElement("div");
-div_soprtBrlltsD_3.setAttribute("id","div_soprtBrlltsD_3");
-div_soprtBrlltsD_3.setAttribute("class","div_soprtBrllts_3");
-/* ----------------- SE INCRUSTA brillitos Derechos ----------------- */
-let div_brlltsD_3 = document.createElement("div");
-div_brlltsD_3.setAttribute("id","div_brlltsD_3");
-div_brlltsD_3.setAttribute("class","div_brllts_3");
-/* --------------------- SE UNEN LOS ELEMENTOS ---------------------- */
-div_avatar_3.appendChild(div_GOjoD_3);
-div_avatar_3.appendChild(div_GOjoI_3);
-div_GOjoD_3.appendChild(div_OjoD_3);
-div_GOjoI_3.appendChild(div_OjoI_3);
-div_GOjoD_3.appendChild(div_ParD_3);
-div_GOjoI_3.appendChild(div_ParI_3);
-div_avatar_3.appendChild(div_soprtBrlltsI_3);
-div_avatar_3.appendChild(div_soprtBrlltsD_3);
-div_soprtBrlltsI_3.appendChild(div_brlltsI_3);
-div_soprtBrlltsD_3.appendChild(div_brlltsD_3);
-
 /// <<<<<<<<<<<<<<<<<<<<< INICIA MOVIMIENTO <<<<<<<<<<<<<<<<<<<<<<<<<
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Movimiento ojos y boca
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Movimiento ojos
 
 function mov_ojos_3(event){
-    var_boca=-1;
+
     // <<<<<<<<<<<<<<<<<<< Posicion mouse
     let Posx=event.clientX
     let Posy=event.clientY
     // <<<<<<<<<<<<<<<<<<< Modifica los ojos
-    let GojoD = document.getElementById('div_GOjoD_3');let rectGOD = GojoD.getBoundingClientRect();
-    let GojoI = document.getElementById('div_GOjoI_3');let rectGOI = GojoI.getBoundingClientRect();
-    let ojoD = document.getElementById('div_OjoD_3');  let rectOD = ojoD.getBoundingClientRect();
-    let ojoI = document.getElementById('div_OjoI_3');  let rectOI = ojoI.getBoundingClientRect();
+    let par_de_ojos_b = document.getElementById('par_de_ojos_b');let rectPDOB = par_de_ojos_b.getBoundingClientRect();
+    let PosGPDOB_x = rectPDOB.left+rectPDOB.width/2;let PosGPDOB_y = rectPDOB.bottom-rectPDOB.height/2;
+    let R = Math.sqrt(Math.pow(Posx-PosGPDOB_x,2)+Math.pow(Posy-PosGPDOB_y,2))
 
-    let PosGOjoDx = rectGOD.left+rectGOD.width/2;let PosGOjoDy = rectGOD.bottom-rectGOD.height/2;
-    let PosGOjoIx = rectGOI.left+rectGOI.width/2;let PosGOjoIy = rectGOI.bottom-rectGOI.height/2;
+    let par_de_ojos_f = document.getElementById('par_de_ojos_f');
 
-    let GD=Math.atan2(Posy-PosGOjoDy,Posx-PosGOjoDx);
-    let GI=Math.atan2(Posy-PosGOjoIy,Posx-PosGOjoIx);
+    let G_DI=Math.atan2(Posy-PosGPDOB_y,Posx-PosGPDOB_x);
 
-    let rx=(rectGOD.width/2-rectOD.width/2)*.9;
-    let ry=(rectGOD.height/2-rectOD.height/2)*.9;
-    let NposODx = rx*Math.cos(GD); let NposODy = ry*Math.sin(GD);
-    let NposOIx = rx*Math.cos(GI); let NposOIy = ry*Math.sin(GI);
+    let rxy = Math.min(R,rectPDOB.width*.5)
+    let NposODI_x = rxy*Math.cos(G_DI); let NposODI_y = rxy*Math.sin(G_DI);
 
-    let NposFODx = NposODx+rectGOD.width/2-rectOD.width/2
-    let NposFOIx = NposOIx+rectGOD.width/2-rectOI.width/2
-    let NposFODy = (NposODy+NposOIy)/2+rectGOD.height/2-rectOD.height/2;
-    let NposFOIy = (NposODy+NposOIy)/2+rectGOD.height/2-rectOD.height/2;
+    par_de_ojos_f.style.left=String(NposODI_x)+"px"
+    par_de_ojos_f.style.top=String(NposODI_y)+"px"
 
-
-    document.getElementById('div_OjoD_3').style.left  = String(NposFODx)+"px";
-    document.getElementById('div_OjoD_3').style.top = String(NposFODy)+"px";
-    document.getElementById('div_OjoI_3').style.left  = String(NposFOIx)+"px";
-    document.getElementById('div_OjoI_3').style.top = String(NposFOIy)+"px";
-};
+    let WH=rectPDOB.width*rectPDOB.width/(rectPDOB.width+Math.min(rectPDOB.width/3,R/rectPDOB.width))
+    console.log(WH," --- ",rectPDOB.width," -- ",R)
+    par_de_ojos_f.style.width=String(WH)+"px"
+    par_de_ojos_f.style.height=String(WH)+"px"
+}
 
 /* -------------------- Funciones para dinámicas -------------------- */
 window.addEventListener("load", mov_ojos_3);

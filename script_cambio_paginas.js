@@ -1,8 +1,8 @@
-let NumPag=3
+let NumPag=4
 // ------------------------ Inicialización Botones (cada pagina tiene su boton)
-let botonA0="";let botonA1="";let botonA2="";
-let botonS0=""; let botonS1=""; let botonS2="";
-let titulo0=""; let titulo1=""; let titulo2="";
+let botonA0="";let botonA1="";let botonA2=""; let botonA3="";
+let botonS0=""; let botonS1=""; let botonS2="";  let botonS3=""; 
+let titulo0=""; let titulo1=""; let titulo2="";  let titulo3=""; 
 for(let b =0;b<NumPag;b++){
     eval("botonA"+String(b)+" = document.getElementById('botonA"+String(b)+"');");
     eval("botonS"+String(b)+" = document.getElementById('botonS"+String(b)+"');");
@@ -23,8 +23,8 @@ function initContenedor(){
     rectcontenedor = contenedor.getBoundingClientRect();
     contenedorW=rectcontenedor.width*.9; contenedorH=rectcontenedor.height*.9;
     // ----------------------- Posicion de boton y posición en Z
-    let posBS=[50,70,50]; let indxBS=[11,11,10]; // <<<<<<<<<<<<<<<<<<<<<<<<<<<<< Aqui tambien modificar numero de paginas y posicion horizontal
-    let posBA=[50,30,50]; let indxBA=[10,10,11]; // <<<<<<<<<<<<<<<<<<<<<<<<<<<<< Aqui tambien modificar numero de paginas y posicion horizontal
+    let posBS=[50,70,70,50]; let indxBS=[11,11,11,10];
+    let posBA=[50,30,30,50]; let indxBA=[10,10,10,11];
     // ------------------------ Inicialización de Posicion de Botones  
     for(let b=0;b<NumPag;b++){        
         eval("botonA"+String(b)+'.style.left = "'+String(posBA[b])+'%";')
@@ -69,17 +69,17 @@ function nextPage(pageId) {
             botonA0.style.left = String(50-cb/103*20)+"%";
             botonS0.style.left = String(50+cb/103*20)+"%";
         }
-        if(pageId=="pagina1"){
-            // ------------------------------------------- Movimiento botones penultima pagina
-            botonA2.style.left = String(50-cb/103*20)+"%";
-            botonS2.style.left = String(50+cb/103*20)+"%";
-        }
         if(pageId=="pagina2"){
+            // ------------------------------------------- Movimiento botones penultima pagina
+            botonA3.style.left = String(50-cb/103*20)+"%";
+            botonS3.style.left = String(50+cb/103*20)+"%";
+        }
+        if(pageId=="pagina3"){
             // ------------------------------------------- Movimiento botones ultima pagina
-            botonA1.style.left = String(30+cb/103*20)+"%"; 
-            botonS1.style.left = String(70-cb/103*20)+"%";
-            botonA1.style.zIndex=11
-            botonS1.style.zIndex=10
+            botonA2.style.left = String(30+cb/103*20)+"%"; 
+            botonS2.style.left = String(70-cb/103*20)+"%";
+            botonA2.style.zIndex=11
+            botonS2.style.zIndex=10
         }
         for(let b=0;b<3;b++){eval("titulo"+String(b)+".style.opacity = "+String(1-cb/100))}
 
@@ -114,6 +114,8 @@ let parpadosD_0 = document.getElementById('div_ParD_0');
 let parpadosI_0 = document.getElementById('div_ParI_0');
 let parpadosD_1 = document.getElementById('div_ParD_1');
 let parpadosI_1 = document.getElementById('div_ParI_1');
+let parpadosD_3 = document.getElementById('ojoD');
+let parpadosI_3 = document.getElementById('ojoI');
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Modifica brillitos
 let posBlltsXI=[26.5,29.5,42.0, 38.6, 38.1, 37.9]
 let posBlltsXD=[26.5,29.5,43.0, 39.9, 39.3, 39.3];
@@ -122,7 +124,9 @@ let brillitsI_0 = document.getElementById('div_brlltsI_0'); let brillitsI_1 = do
 let back_brillitsI_0 = document.getElementById('div_soprtBrlltsI_0'); let back_brillitsI_1 = document.getElementById('div_soprtBrlltsI_1');
 let brillitsD_0 = document.getElementById('div_brlltsD_0'); let brillitsD_1 = document.getElementById('div_brlltsD_1');
 let back_brillitsD_0 = document.getElementById('div_soprtBrlltsD_0'); let back_brillitsD_1 = document.getElementById('div_soprtBrlltsD_1');
-function animacion(cb,cbG,GrdP,dirP){
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Modifica flotecion
+let flota_pos = document.getElementById("avatar_3_1")
+function animacion(cb,cbG,GrdP,dirP,flt){
     // <<<<<<<<<<<<<<<<<<< Modifica brillitos
     let gradientEscala = 1;
     let dirPB = 1;
@@ -145,25 +149,36 @@ function animacion(cb,cbG,GrdP,dirP){
         clearInterval(intervalos); // Detén el intervalo
         cb+=1;cbG+=1;
         if(cb>5){cb=0}
-        setTimeout(animacion,100,cb,cbG,GrdP,dirP); // Espera .1 segundos antes de repetir
+        setTimeout(animacion,100,cb,cbG,GrdP,dirP,flt); // Espera .1 segundos antes de repetir
     }
     // <<<<<<<<<<<<<<<<<<< Modifica PARPADEO
     if(cbG>10){
-        GrdP += dirP * 9; // Incrementa la posición del gradiente
-        parpadosD_0.style.background = `linear-gradient(180deg, #611232 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
-        parpadosI_0.style.background = `linear-gradient(180deg, #611232 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
-        parpadosD_1.style.background = `linear-gradient(180deg, #000000 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
-        parpadosI_1.style.background = `linear-gradient(180deg, #000000 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
-        if (GrdP >= 99) {dirP = -1;
+        GrdP += dirP * 10; // Incrementa la posición del gradiente
+
+        if (GrdP >= 100) {dirP = -1;
         }else if (GrdP < 0) {
             dirP = 1;
             GrdP=0;
             cbG=0;
         }
+
+        parpadosD_0.style.background = `linear-gradient(180deg, #611232 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
+        parpadosI_0.style.background = `linear-gradient(180deg, #611232 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
+        parpadosD_1.style.background = `linear-gradient(180deg, #000000 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
+        parpadosI_1.style.background = `linear-gradient(180deg, #000000 ${GrdP}%,  rgba(0, 0, 0, 0) 0%)`;
+        parpadosD_3.style.height = String(100-GrdP)+"%";parpadosD_3.style.top = String(50-GrdP/2)+"%"
+        parpadosI_3.style.height = String(100-GrdP)+"%";parpadosI_3.style.top = String(50-GrdP/2)+"%"
+        parpadosD_3.style.transform = 'translateY(-50%)'; parpadosI_3.style.transform = 'translateY(-50%)';
     }
+    // <<<<<<<<<<<<<<<<<<< Modifica flotacion
+    if(flt<=2*Math.PI){flt+=Math.PI/100}
+    else{flt=0}
+    //flota_pos.style.top=String(Math.sin(flt)*.5+50)+"%"
+    //flota_pos.style.transform = 'translate(-50%, -50%)';
+
 }, 19); // Actualiza el gradiente cada 9 milisegundos
 }
-animacion(0,0,0,1) // el primero inicializa animacion
+animacion(0,0,0,1,0) // el primero inicializa animacion
 // <<<<<<<<<<<<<<<<<<<
 // -------------------
 // <<<<<<<<<<<<<<<<<<<
