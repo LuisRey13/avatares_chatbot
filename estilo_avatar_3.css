@@ -105,8 +105,11 @@
   height: 3%;
   z-index: 100;
   border-radius: 50%;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   animation: sombra 6s linear infinite;
+  border: 2px solid rgb(113, 198, 255);
+  box-shadow: 0 0 3px rgb(0, 153, 255), 0 0 6px rgb(0, 153, 255), 0 0 12px rgb(0, 153, 255);
+  outline: 1px solid #09F;
 }
 /* ----------------------- flotacion ---------------------- */
 @keyframes sombra {
